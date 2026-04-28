@@ -7,7 +7,8 @@ import (
 )
 
 func main() {
-	Pointers()
+	// Pointers()
+	getAdultAgeWithPointers(nil)
 }
 
 func Pointers() {
@@ -45,6 +46,10 @@ func getAdultAge(age int) (int, error) {
 // with pointers
 func getAdultAgeWithPointers(age *int) (int, error) {
 
+	// if age == nil {
+	// 	return  0,errors.New("")
+	// }
+
 	// no need to return just change the value of the age
 	// must deference the first one as well
 	// *age = *age - 18
@@ -56,9 +61,7 @@ func getAdultAgeWithPointers(age *int) (int, error) {
 	}
 }
 
-
 // IMPORTANT
 
-// takes the &pointer value from the user and update the value from the memory address 
+// takes the &pointer value from the user and update the value from the memory address
 //  fmt.Scan()
-

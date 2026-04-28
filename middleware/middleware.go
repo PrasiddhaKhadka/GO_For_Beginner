@@ -35,8 +35,12 @@ func authMiddleware(next http.HandlerFunc) http.HandlerFunc {
 	}
 }
 
+
+
 func methodCheckMiddleware(method string, next http.HandlerFunc) http.HandlerFunc {
+
 	return func(w http.ResponseWriter, r *http.Request) {
+		
 		if r.Method != method {
 			writeJson(w, http.StatusMethodNotAllowed, map[string]string{
 				"error": "method not allowed",

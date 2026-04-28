@@ -34,7 +34,7 @@ func main() {
 
 	fmt.Println((len("A")))
 	// TAKING THE CHAR OUT OF LETTER LIKE GAMMA
-	fmt.Println((len("γ")))
+	fmt.Println((len("γ")), "gamma!")
 
 	// changing the special char
 	fmt.Println(utf8.RuneCountInString("γ"))

@@ -7,6 +7,18 @@ import (
 	"net/http"
 )
 
+// Create a struct
+// http.ServerMux() must be private and must be a pointer
+// implement http.handler
+// add get, put , post , patch, delete
+// get type func string, router handler // error return type
+
+// type AppHandler func(w http.ResponseWriter, r *http.Request) error
+// app := NewApp()
+// app.Get('/',func(w httpResponseWiter, r *httpRequest)error{
+
+// })
+
 func main() {
 	mux := http.NewServeMux()
 

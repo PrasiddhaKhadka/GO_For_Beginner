@@ -4,6 +4,8 @@ import "net/http"
 
 type AppHandler func(w http.ResponseWriter, r *http.Request) error
 
+// App.Get('/')
+
 // Converts AppHandler into a standard http.HandlerFunc
 func Handle(h AppHandler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {

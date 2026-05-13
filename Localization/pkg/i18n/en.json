@@ -1,0 +1,11 @@
+{
+  "ADMIN_CANNOT_APPLY_FOR_CREATOR": {
+    "other": "Admin cannot apply for creator access"
+  },
+  "HELLO": {
+    "other": "Hello, welcome!"
+  },
+  "GREETING": {
+    "other": "Good morning"
+  }
+}

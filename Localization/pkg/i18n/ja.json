@@ -1,0 +1,11 @@
+{
+  "ADMIN_CANNOT_APPLY_FOR_CREATOR": {
+    "other": "管理者はクリエイターとして申請できません"
+  },
+  "HELLO": {
+    "other": "こんにちは、ようこそ！"
+  },
+  "GREETING": {
+    "other": "おはようございます"
+  }
+}

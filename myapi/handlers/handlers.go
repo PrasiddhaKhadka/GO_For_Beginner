@@ -7,12 +7,13 @@ import (
 	"net/http"
 )
 
-func GetUser(w http.ResponseWriter, r *http.Request) {
+func GetUser(w http.ResponseWriter, r *http.Request) error {
 	user := models.User{Name: "Ramesh", Email: "ramesh@gmail.com"}
 	utils.WriteJSON(w, http.StatusOK, user)
+	return nil
 }
 
-func Login(w http.ResponseWriter, r *http.Request) {
+func Login(w http.ResponseWriter, r *http.Request) error {
 
 	var req models.User
 
@@ -23,7 +24,7 @@ func Login(w http.ResponseWriter, r *http.Request) {
 				Message: "Invalid request body",
 			},
 		})
-		return
+		return nil
 	}
 
 	// validation
@@ -40,4 +41,5 @@ func Login(w http.ResponseWriter, r *http.Request) {
 		"Email": req.Email,
 	})
 
+	return nil
 }

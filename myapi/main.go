@@ -3,21 +3,10 @@ package main
 import (
 	"beginner/myapi/handlers"
 	"beginner/myapi/middlewares"
+	"beginner/myapi/utils"
 	"fmt"
 	"net/http"
 )
-
-// Create a struct
-// http.ServerMux() must be private and must be a pointer
-// implement http.handler
-// add get, put , post , patch, delete
-// get type func string, router handler // error return type
-
-// type AppHandler func(w http.ResponseWriter, r *http.Request) error
-// app := NewApp()
-// app.Get('/',func(w httpResponseWiter, r *httpRequest)error{
-
-// })
 
 func main() {
 	mux := http.NewServeMux()
@@ -26,7 +15,7 @@ func main() {
 		middlewares.Logger(
 			middlewares.Auth(
 				middlewares.MethodCheck(http.MethodGet,
-					handlers.GetUser,
+					utils.Handler(handlers.GetUser),
 				),
 			),
 		),
@@ -35,7 +24,7 @@ func main() {
 	mux.HandleFunc("/login",
 		middlewares.Logger(
 			middlewares.MethodCheck(http.MethodPost,
-				handlers.Login),
+				utils.Handler(handlers.Login)),
 		))
 
 	fmt.Println("Server running on http://localhost:8080")

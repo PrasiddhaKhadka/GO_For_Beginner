@@ -3,30 +3,29 @@ package utils
 import "net/http"
 
 type AppError struct {
-	Status  int
+	Code    int
 	Message string
 }
 
-func (a *AppError) Error() string {
-	return a.Message
+func (e *AppError) Error() string {
+	return e.Message
 }
 
 func BadRequest(msg string) *AppError {
-	appErr := AppError{
-		Status:  http.StatusBadRequest,
+	return &AppError{
+		Code:    http.StatusBadRequest,
 		Message: msg,
 	}
-	return &appErr
 }
 
 func Unauthorized(msg string) *AppError {
-	return &AppError{Status: http.StatusUnauthorized, Message: msg}
+	return &AppError{Code: http.StatusUnauthorized, Message: msg}
 }
 
 func NotFound(msg string) *AppError {
-	return &AppError{Status: http.StatusNotFound, Message: msg}
+	return &AppError{Code: http.StatusNotFound, Message: msg}
 }
 
 func InternalError(msg string) *AppError {
-	return &AppError{Status: http.StatusInternalServerError, Message: msg}
+	return &AppError{Code: http.StatusInternalServerError, Message: msg}
 }
